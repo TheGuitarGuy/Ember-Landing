@@ -110,5 +110,19 @@
             </div>
         </div>
     </footer>
+    <div class="modal-overlay" id="waitlistModal">
+        <div class="modal-content">
+            <button class="download-btn" onclick="openModal()">Join Waitlist</button>
+            <p class="modal-desc">Be the first to know when we launch. No spam, just updates.</p>
+            <form id="waitlistForm">
+                <div class="input-group">
+                    <input type="email" id="email" class="email-input" placeholder="Enter your email" required>
+                </div>
+                <button type="submit" class="submit-btn">Notify Me</button>
+            </form>
+            <button class="close-modal" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -18,7 +18,7 @@
                 </a>
             </div>
             <div class="nav-menu">
-                <button class="download-btn" onclick="alert('Demo Mode: App Store link')">Join Waitlist</button>
+                <button class="download-btn" onclick="openModal()">Join Waitlist</button>
             </div>
         </div>
     </nav>
@@ -37,7 +37,7 @@
                     </p>
                     
                     <div class="button-group fade-in delay-2">
-                        <button class="cta-button" onclick="alert('Demo Mode: Signup')">Join Waitlist</button>
+                        <button class="cta-button" onclick="openModal()">Join Waitlist</button>
                         <p class="sub-cta">Free to start. No equipment needed.</p>
                     </div>
                 </div>
@@ -61,6 +61,19 @@
             </div>
         </div>
     </footer>
+    <div class="modal-overlay" id="waitlistModal">
+        <div class="modal-content">
+            <h3 class="modal-title">Join the Waitlist</h3>
+            <p class="modal-desc">Be the first to know when we launch. No spam, just updates.</p>
+            <form id="waitlistForm">
+                <div class="input-group">
+                    <input type="email" id="email" class="email-input" placeholder="Enter your email" required>
+                </div>
+                <button type="submit" class="submit-btn">Notify Me</button>
+            </form>
+            <button class="close-modal" onclick="closeModal()">Close</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
