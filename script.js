@@ -46,37 +46,40 @@ form.addEventListener('submit', e => {
     const emailInput = document.getElementById('email');
     const email = emailInput.value;
     const btn = form.querySelector('.submit-btn');
-    const originalText = btn.innerText;
+    const originalText = "Notify Me"; // Or whatever your default text is
 
-    // Change button state
-    btn.innerText = 'Joining...';
+    // A. Start Loading Animation
+    // We use HTML here to add the spans for the dots
+    btn.innerHTML = 'Joining<span class="loading-dots"><span>.</span><span>.</span><span>.</span></span>';
     btn.disabled = true;
 
     // --- PASTE YOUR GOOGLE SCRIPT URL BELOW ---
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwkhhgrW9tTQPUHh-dDywdS81M3Ouwoh9V3HVknfvh5z3-1rdOULU7hJebnpfhksQOhfA/exec'; 
+    const scriptURL = 'REPLACE_WITH_YOUR_DEPLOYMENT_URL'; 
 
     fetch(scriptURL, {
         method: 'POST',
-        mode: 'no-cors', // Important for sending data to Google Scripts
+        mode: 'no-cors',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ email: email, timestamp: new Date() })
     })
     .then(() => {
-        // Success
-        btn.innerText = 'Success!';
-        btn.style.backgroundColor = '#10B981'; // Green color
+        // B. Success Animation
+        btn.innerHTML = 'Success! &#10003;'; // Adds a checkmark
+        btn.classList.add('btn-success-anim'); // Triggers the CSS pop/green color
+        
         setTimeout(() => {
             closeModal();
             form.reset();
-            btn.innerText = originalText;
+            
+            // Reset button to original state
+            btn.innerHTML = originalText;
             btn.disabled = false;
-            btn.style.backgroundColor = ''; // Reset color
-        }, 2000);
+            btn.classList.remove('btn-success-anim');
+        }, 2000); // Wait 2 seconds before closing
     })
     .catch(error => {
-        // Error
         console.error('Error!', error.message);
         btn.innerText = 'Error. Try again.';
         setTimeout(() => {
