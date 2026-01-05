@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "HU9YUQ39AD.pod-labs.Elevate"
+        ],
+        "components": [
+          {
+            "/": "/join/*",
+            "comment": "Matches any group join link"
+          }
+        ]
+      }
+    ]
+  }
+}
