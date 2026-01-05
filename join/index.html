@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Joining Group | Ember Fitness</title>
-    <meta http-equiv="refresh" content="0; url=https://getemberfitness.com" />
     <script>
-        // Optional: If you want to show a "Download the App" message instead of redirecting
-        window.location.href = "https://getemberfitness.com"; 
+        // If someone hits a 404 on a /join/ link, send them to the home page
+        if (window.location.pathname.includes('/join/')) {
+            window.location.href = 'https://getemberfitness.com';
+        }
     </script>
 </head>
 <body>
-    <p>Redirecting to Ember Fitness...</p>
+    Redirecting...
 </body>
 </html>
