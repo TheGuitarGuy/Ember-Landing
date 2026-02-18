@@ -286,15 +286,11 @@
 </main>
 
 <script>
-    // ─── Config ────────────────────────────────────────────────────────────────
-    // Replace with your actual Firebase API key
-    const API_KEY = 'AIzaSyA9GoOKPGZPfTLg3GIyIbpwIXdNQRfa52Q';
-
     // ─── Helpers ───────────────────────────────────────────────────────────────
     const params = new URLSearchParams(window.location.search);
     const mode      = params.get('mode');
     const oobCode   = params.get('oobCode');
-    const apiKey    = params.get('apiKey') || API_KEY;
+    const apiKey    = params.get('apiKey');
     const continueUrl = params.get('continueUrl');
 
     function showSection(id) {
