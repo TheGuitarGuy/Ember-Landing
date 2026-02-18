@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ember Fitness - Account</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ember-orange: #FF6E40;
+            --text-main: #111827;
+            --text-sub: #4B5563;
+            --bg-light: #F8FAFC;
+            --white: #FFFFFF;
+            --error: #DC2626;
+            --success: #16A34A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-main);
+            background: radial-gradient(circle at 100% 0%, #FFF5F1 0%, #FFFFFF 50%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar */
+        .navbar {
+            padding: 20px 24px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .logo img {
+            height: 32px;
+        }
+
+        /* Main content */
+        .main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 24px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+            padding: 48px 40px;
+            width: 100%;
+            max-width: 440px;
+            text-align: center;
+        }
+
+        .icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 28px;
+        }
+
+        .icon.orange { background: #FFF0EB; }
+        .icon.green  { background: #DCFCE7; }
+        .icon.red    { background: #FEE2E2; }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-sub);
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        /* Password input */
+        .input-group {
+            text-align: left;
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input[type="password"]:focus {
+            border-color: var(--ember-orange);
+        }
+
+        /* Password strength */
+        .strength-bar {
+            height: 4px;
+            border-radius: 2px;
+            background: #E5E7EB;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .strength-fill {
+            height: 100%;
+            border-radius: 2px;
+            transition: width 0.3s, background 0.3s;
+            width: 0%;
+        }
+
+        .strength-label {
+            font-size: 12px;
+            margin-top: 4px;
+            color: var(--text-sub);
+        }
+
+        /* Buttons */
+        .btn-primary {
+            width: 100%;
+            padding: 14px;
+            background: var(--ember-orange);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.1s;
+            margin-top: 8px;
+        }
+
+        .btn-primary:hover { opacity: 0.9; }
+        .btn-primary:active { transform: scale(0.98); }
+        .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .btn-secondary {
+            display: inline-block;
+            margin-top: 16px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--ember-orange);
+            text-decoration: none;
+        }
+
+        /* Alert */
+        .alert {
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-align: left;
+            display: none;
+        }
+
+        .alert.error   { background: #FEE2E2; color: var(--error); display: block; }
+        .alert.success { background: #DCFCE7; color: var(--success); display: block; }
+
+        /* Spinner */
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #F3F3F3;
+            border-top: 3px solid var(--ember-orange);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 24px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Sections (shown/hidden by JS) */
+        .section { display: none; }
+        .section.active { display: block; }
+
+        @media (max-width: 480px) {
+            .card { padding: 36px 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="/" class="logo">
+        <img src="/assets/Ember Black Text.png" alt="Ember Fitness">
+    </a>
+</nav>
+
+<main class="main">
+    <div class="card">
+
+        <!-- Loading -->
+        <div id="section-loading" class="section active">
+            <div class="spinner"></div>
+            <p class="subtitle">Just a moment…</p>
+        </div>
+
+        <!-- Invalid / unknown -->
+        <div id="section-invalid" class="section">
+            <div class="icon red">⚠️</div>
+            <h1>Invalid Link</h1>
+            <p class="subtitle">This link is invalid or has already been used. Links expire after a short time for your security.</p>
+            <a href="/" class="btn-secondary">Back to Ember</a>
+        </div>
+
+        <!-- Verify email -->
+        <div id="section-verify-email" class="section">
+            <div id="verify-icon" class="icon orange">✉️</div>
+            <h1 id="verify-title">Verifying your email…</h1>
+            <p id="verify-subtitle" class="subtitle"></p>
+            <div id="verify-alert" class="alert"></div>
+            <a href="/" id="verify-home-link" class="btn-secondary" style="display:none;">Back to Ember</a>
+        </div>
+
+        <!-- Reset password -->
+        <div id="section-reset-password" class="section">
+            <div class="icon orange">🔑</div>
+            <h1>Reset your password</h1>
+            <p class="subtitle">Choose a new password for your Ember account.</p>
+            <div id="reset-alert" class="alert"></div>
+            <form id="reset-form" onsubmit="submitPasswordReset(event)">
+                <div class="input-group">
+                    <label for="new-password">New password</label>
+                    <input type="password" id="new-password" placeholder="At least 8 characters" required>
+                    <div class="strength-bar"><div class="strength-fill" id="strength-fill"></div></div>
+                    <div class="strength-label" id="strength-label"></div>
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Confirm password</label>
+                    <input type="password" id="confirm-password" placeholder="Re-enter your password" required>
+                </div>
+                <button type="submit" class="btn-primary" id="reset-btn">Set new password</button>
+            </form>
+        </div>
+
+        <!-- Reset success -->
+        <div id="section-reset-success" class="section">
+            <div class="icon green">✅</div>
+            <h1>Password updated!</h1>
+            <p class="subtitle">Your password has been reset. You can now sign in to Ember with your new password.</p>
+            <a href="/" class="btn-secondary">Back to Ember</a>
+        </div>
+
+        <!-- Recover email -->
+        <div id="section-recover-email" class="section">
+            <div id="recover-icon" class="icon orange">📧</div>
+            <h1 id="recover-title">Restoring your email…</h1>
+            <p id="recover-subtitle" class="subtitle"></p>
+            <div id="recover-alert" class="alert"></div>
+            <a href="/" id="recover-home-link" class="btn-secondary" style="display:none;">Back to Ember</a>
+        </div>
+
+    </div>
+</main>
+
+<script>
+    // ─── Config ────────────────────────────────────────────────────────────────
+    // Replace with your actual Firebase API key
+    const API_KEY = 'AIzaSyA9GoOKPGZPfTLg3GIyIbpwIXdNQRfa52Q';
+
+    // ─── Helpers ───────────────────────────────────────────────────────────────
+    const params = new URLSearchParams(window.location.search);
+    const mode      = params.get('mode');
+    const oobCode   = params.get('oobCode');
+    const apiKey    = params.get('apiKey') || API_KEY;
+    const continueUrl = params.get('continueUrl');
+
+    function showSection(id) {
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+    }
+
+    function setAlert(id, type, message) {
+        const el = document.getElementById(id);
+        el.className = 'alert ' + type;
+        el.textContent = message;
+    }
+
+    async function firebasePost(endpoint, body) {
+        const res = await fetch(
+            `https://identitytoolkit.googleapis.com/v1/accounts:${endpoint}?key=${apiKey}`,
+            {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body)
+            }
+        );
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error?.message || 'An error occurred.');
+        return data;
+    }
+
+    // ─── Email Verification ────────────────────────────────────────────────────
+    async function handleVerifyEmail() {
+        showSection('section-verify-email');
+        try {
+            await firebasePost('update', { oobCode });
+            document.getElementById('verify-icon').textContent = '✅';
+            document.getElementById('verify-icon').className = 'icon green';
+            document.getElementById('verify-title').textContent = 'Email verified!';
+            document.getElementById('verify-subtitle').textContent =
+                'Your email address has been confirmed. You\'re all set to use Ember.';
+            document.getElementById('verify-home-link').style.display = 'inline-block';
+        } catch (err) {
+            document.getElementById('verify-icon').textContent = '⚠️';
+            document.getElementById('verify-icon').className = 'icon red';
+            document.getElementById('verify-title').textContent = 'Verification failed';
+            setAlert('verify-alert', 'error', friendlyError(err.message));
+            document.getElementById('verify-home-link').style.display = 'inline-block';
+        }
+    }
+
+    // ─── Password Reset ────────────────────────────────────────────────────────
+    function handleResetPassword() {
+        showSection('section-reset-password');
+
+        const pwInput = document.getElementById('new-password');
+        const fill    = document.getElementById('strength-fill');
+        const label   = document.getElementById('strength-label');
+
+        pwInput.addEventListener('input', () => {
+            const v = pwInput.value;
+            let score = 0;
+            if (v.length >= 8)  score++;
+            if (/[A-Z]/.test(v)) score++;
+            if (/[0-9]/.test(v)) score++;
+            if (/[^A-Za-z0-9]/.test(v)) score++;
+
+            const levels = [
+                { w: '0%',   color: '#E5E7EB', text: '' },
+                { w: '25%',  color: '#EF4444', text: 'Weak' },
+                { w: '50%',  color: '#F97316', text: 'Fair' },
+                { w: '75%',  color: '#FACC15', text: 'Good' },
+                { w: '100%', color: '#22C55E', text: 'Strong' },
+            ];
+            const lv = levels[score];
+            fill.style.width = lv.w;
+            fill.style.background = lv.color;
+            label.textContent = lv.text;
+        });
+    }
+
+    async function submitPasswordReset(e) {
+        e.preventDefault();
+        const password = document.getElementById('new-password').value;
+        const confirm  = document.getElementById('confirm-password').value;
+
+        if (password.length < 8) {
+            setAlert('reset-alert', 'error', 'Password must be at least 8 characters.');
+            return;
+        }
+        if (password !== confirm) {
+            setAlert('reset-alert', 'error', 'Passwords do not match.');
+            return;
+        }
+
+        const btn = document.getElementById('reset-btn');
+        btn.disabled = true;
+        btn.textContent = 'Updating…';
+        document.getElementById('reset-alert').className = 'alert';
+
+        try {
+            await firebasePost('resetPassword', { oobCode, newPassword: password });
+            showSection('section-reset-success');
+        } catch (err) {
+            setAlert('reset-alert', 'error', friendlyError(err.message));
+            btn.disabled = false;
+            btn.textContent = 'Set new password';
+        }
+    }
+
+    // ─── Email Recovery ────────────────────────────────────────────────────────
+    async function handleRecoverEmail() {
+        showSection('section-recover-email');
+        try {
+            await firebasePost('update', { oobCode });
+            document.getElementById('recover-icon').textContent = '✅';
+            document.getElementById('recover-icon').className = 'icon green';
+            document.getElementById('recover-title').textContent = 'Email restored!';
+            document.getElementById('recover-subtitle').textContent =
+                'Your original email address has been restored to your Ember account.';
+            document.getElementById('recover-home-link').style.display = 'inline-block';
+        } catch (err) {
+            document.getElementById('recover-icon').textContent = '⚠️';
+            document.getElementById('recover-icon').className = 'icon red';
+            document.getElementById('recover-title').textContent = 'Recovery failed';
+            setAlert('recover-alert', 'error', friendlyError(err.message));
+            document.getElementById('recover-home-link').style.display = 'inline-block';
+        }
+    }
+
+    // ─── Friendly error messages ───────────────────────────────────────────────
+    function friendlyError(msg) {
+        const map = {
+            'EXPIRED_OOB_CODE':       'This link has expired. Please request a new one.',
+            'INVALID_OOB_CODE':       'This link is invalid or has already been used.',
+            'USER_DISABLED':          'This account has been disabled.',
+            'EMAIL_NOT_FOUND':        'No account found with this email address.',
+            'WEAK_PASSWORD':          'Password is too weak. Please choose a stronger one.',
+            'OPERATION_NOT_ALLOWED':  'This operation is not allowed. Contact support.',
+        };
+        for (const [key, value] of Object.entries(map)) {
+            if (msg.includes(key)) return value;
+        }
+        return msg;
+    }
+
+    // ─── Router ────────────────────────────────────────────────────────────────
+    (function init() {
+        if (!mode || !oobCode) {
+            showSection('section-invalid');
+            return;
+        }
+
+        switch (mode) {
+            case 'verifyEmail':    handleVerifyEmail();    break;
+            case 'resetPassword':  handleResetPassword();  break;
+            case 'recoverEmail':   handleRecoverEmail();   break;
+            default:               showSection('section-invalid');
+        }
+    })();
+</script>
+
+</body>
+</html>
