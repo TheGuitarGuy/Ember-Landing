@@ -94,6 +94,8 @@ body {
     font-size: 15px;
     cursor: pointer;
     transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .download-btn:hover {
@@ -114,7 +116,7 @@ body {
 
 .hero-content {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: 1fr 1.1fr;
     gap: 60px;
     align-items: center;
 }
@@ -185,8 +187,52 @@ body {
 .hero-phone {
     width: 100%;
     height: auto;
-    max-width: 600px;
+    max-width: 720px;
     filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.12));
+}
+
+/* App Store Button */
+.app-store-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #000;
+    color: #fff;
+    padding: 13px 24px;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+}
+
+.app-store-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+.apple-logo {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+}
+
+.app-store-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.app-store-label {
+    font-size: 11px;
+    font-weight: 400;
+    opacity: 0.85;
+    letter-spacing: 0.01em;
+}
+
+.app-store-name {
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
 }
 
 /* Legal Pages Styling - FIXED MOBILE PADDING */
