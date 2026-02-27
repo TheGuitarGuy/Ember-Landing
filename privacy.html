@@ -37,30 +37,44 @@
             <h2>1. Information We Collect</h2>
 
             <h3>Account information</h3>
-            <p>When you create an account, we collect your email address and the display name or profile information you
-                choose to provide. This is used to authenticate you, personalize your experience, and sync your data
-                across devices.</p>
+            <p>When you create an account, we collect your email address and the display name you choose to provide.
+                This information is used to authenticate you, personalize your experience, and sync your data across
+                devices. We also store account metadata such as your account creation date and last login time.</p>
 
-            <h3>Health and fitness data</h3>
-            <p>With your permission, the App reads from and writes to Apple HealthKit. This includes workout sessions,
-                activity data, and related fitness metrics. Health data is used solely to power in-app features such as
-                workout tracking and progress history. We do not sell, share, or transmit your Health data to third
-                parties.</p>
+            <h3>Workout and fitness data</h3>
+            <p>The App stores your workout history, completed exercises, streaks, scheduled workout days, and monthly
+                activity summaries in our cloud database (Google Firebase). This data is used to power in-app features
+                such as progress tracking, streak calculations, and group activity sharing.</p>
+
+            <h3>Health data (Apple HealthKit)</h3>
+            <p>With your permission, the App reads the following data from Apple HealthKit:</p>
+            <ul>
+                <li>Workout sessions — to import your outdoor runs, walks, and hikes completed in other apps or on Apple Watch</li>
+                <li>Heart rate — to display live heart rate data streamed from Apple Watch during active workouts</li>
+                <li>Walking and running distance — to display live distance data streamed from Apple Watch during active workouts</li>
+            </ul>
+            <p>The App does not write data back to Apple HealthKit. Health data is used solely to power in-app features
+                and is never sold, shared, or transmitted to third parties.</p>
 
             <h3>Camera</h3>
-            <p>The App uses your device's camera to analyze body position and count exercise repetitions in real time.
-                All camera processing happens entirely on your device — no images or video are stored or transmitted to
-                any server.</p>
+            <p>The App uses your device's camera to analyze body position and count exercise repetitions in real time
+                using on-device processing. No images or video are ever stored on your device or transmitted to any
+                server.</p>
 
             <h3>Location</h3>
-            <p>The App collects your device's GPS location during run tracking workouts. Location data is used to map
-                your route, calculate distance, and measure pace. Location is only active when you start a run. We do
-                not continuously track your location in the background for any other purpose.</p>
+            <p>The App uses your GPS location during run and walk tracking workouts to map your route, calculate
+                distance, and measure pace. Location is active only while a run or walk workout is in progress,
+                including when the app is backgrounded during a session. We do not track your location for any other
+                purpose.</p>
+
+            <h3>Notification tokens</h3>
+            <p>If you enable push notifications, your device's notification token is stored in our cloud database and
+                used solely to deliver workout reminders and App notices to your device.</p>
 
             <h3>Usage data</h3>
             <p>We automatically collect information about how you use the App — such as features visited, workouts
-                completed, and session duration — to understand usage patterns and improve the App over time. This data
-                is collected in aggregated, anonymized form through Google Firebase Analytics.</p>
+                completed, and session duration — to understand usage patterns and improve the App. This data is
+                collected through Google Firebase Analytics.</p>
 
             <h3>Purchase information</h3>
             <p>In-app purchases (such as Remove Ads) are processed entirely by Apple through StoreKit. We do not receive
@@ -73,12 +87,12 @@
                 <li>Provide, operate, and improve the App and its features</li>
                 <li>Sync your workout history, streaks, and group activity across devices</li>
                 <li>Display relevant advertising (see Section 3)</li>
-                <li>Respond to your questions and support requests</li>
-                <li>Send important notices about the App (not marketing, unless you opt in)</li>
+                <li>Send push notifications for workout reminders and App notices</li>
+                <li>Respond to your support requests</li>
             </ul>
 
             <h2>3. Third-Party Services</h2>
-            <p>The App uses the following third-party services, each with its own privacy policy:</p>
+            <p>The App uses the following third-party services, each governed by its own privacy policy:</p>
             <div style="overflow-x: auto; margin-bottom: 24px;">
                 <table style="width: 100%; border-collapse: collapse; border: 1px solid #E5E7EB; font-size: 14px;">
                     <thead>
@@ -91,7 +105,7 @@
                     <tbody>
                         <tr style="border-bottom: 1px solid #E5E7EB;">
                             <td style="padding: 12px;">Google Firebase</td>
-                            <td style="padding: 12px;">Authentication, cloud data storage, analytics</td>
+                            <td style="padding: 12px;">Authentication, database, analytics</td>
                             <td style="padding: 12px;"><a href="https://firebase.google.com/support/privacy"
                                     target="_blank">firebase.google.com/support/privacy</a></td>
                         </tr>
@@ -105,8 +119,7 @@
                 </table>
             </div>
             <p>AdMob may collect advertising identifiers and device information to serve personalized or
-                non-personalized ads. You can limit ad tracking through your iOS device settings under Privacy &
-                Security → Tracking.</p>
+                non-personalized ads. You can limit ad tracking in iOS Settings → Privacy &amp; Security → Tracking.</p>
 
             <h2>4. Data Sharing</h2>
             <p>We do not sell your personal information. We share information only in these circumstances:</p>
@@ -121,10 +134,10 @@
 
             <h2>5. Data Retention</h2>
             <p>We retain your account and fitness data for as long as your account is active and for a reasonable period
-                after deletion. Automatically collected analytics data is retained for up to 24 months. To request
-                deletion of your account and associated data, contact us at <a
-                    href="mailto:tryemberfitness@gmail.com">tryemberfitness@gmail.com</a> and we will respond within 30
-                days.</p>
+                after deletion. Analytics data is retained for up to 24 months. To request deletion of your account and
+                all associated data, contact us at <a href="mailto:tryemberfitness@gmail.com">tryemberfitness@gmail.com</a>
+                and we will respond within 30 days. You may also delete your account directly within the App under
+                Settings → Account → Delete Account.</p>
 
             <h2>6. Children's Privacy</h2>
             <p>The App is not directed at children under 13. We do not knowingly collect personal information from
@@ -133,27 +146,26 @@
 
             <h2>7. Your Choices</h2>
             <ul>
-                <li>Account deletion — Contact tryemberfitness@gmail.com to delete your account and data</li>
-                <li>HealthKit — You can revoke HealthKit access at any time in iOS Settings → Privacy & Security →
-                    Health</li>
-                <li>Location — You can revoke location access at any time in iOS Settings → Privacy & Security →
-                    Location Services</li>
-                <li>Camera — You can revoke camera access at any time in iOS Settings → Privacy & Security → Camera</li>
-                <li>Ad tracking — Limit ad personalization in iOS Settings → Privacy & Security → Tracking</li>
+                <li>Account deletion — Delete your account in-app under Settings → Account → Delete Account, or contact
+                    <a href="mailto:tryemberfitness@gmail.com">tryemberfitness@gmail.com</a></li>
+                <li>HealthKit — Revoke HealthKit access at any time in iOS Settings → Privacy &amp; Security → Health</li>
+                <li>Location — Revoke location access at any time in iOS Settings → Privacy &amp; Security → Location Services</li>
+                <li>Camera — Revoke camera access at any time in iOS Settings → Privacy &amp; Security → Camera</li>
+                <li>Notifications — Disable notifications in the App or in iOS Settings → Notifications → Ember Fitness</li>
+                <li>Ad tracking — Limit ad personalization in iOS Settings → Privacy &amp; Security → Tracking</li>
                 <li>Uninstalling the App stops all data collection</li>
             </ul>
 
             <h2>8. Security</h2>
             <p>We take reasonable technical and organizational measures to protect your information, including encrypted
-                data transmission and access controls. However, no system is completely secure and we cannot guarantee
-                absolute security.</p>
+                data transmission and access controls on our cloud database. However, no system is completely secure and
+                we cannot guarantee absolute security.</p>
 
             <h2>9. Changes to This Policy</h2>
-            <p>We may update this Privacy Policy from time to time. When we do, we will update the effective date above.
-                Continued use of the App after changes constitutes acceptance of the updated policy.</p>
+            <p>We may update this Privacy Policy from time to time. When we do, we will update the effective date at the
+                top of this page. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
 
             <h2>10. Contact</h2>
-            <p>If you have questions about this Privacy Policy or your data, contact us at:</p>
             <p>Email: <a href="mailto:tryemberfitness@gmail.com">tryemberfitness@gmail.com</a><br>
                 Website: <a href="https://getemberfitness.com">getemberfitness.com</a></p>
         </div>
