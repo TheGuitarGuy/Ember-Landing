@@ -191,21 +191,23 @@ body {
     filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.12));
 }
 
-/* App Store Badge */
-.app-store-badge-link {
+/* TestFlight Beta Button */
+.testflight-btn {
     display: inline-block;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    background-color: var(--ember-orange);
+    color: var(--white);
+    text-decoration: none;
+    padding: 18px 42px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(255, 110, 64, 0.25);
 }
 
-.app-store-badge-link:hover {
+.testflight-btn:hover {
     transform: translateY(-2px);
-    opacity: 0.85;
-}
-
-.app-store-badge {
-    height: 54px;
-    width: auto;
-    display: block;
+    box-shadow: 0 12px 24px rgba(255, 110, 64, 0.3);
 }
 
 /* Legal Pages Styling - FIXED MOBILE PADDING */

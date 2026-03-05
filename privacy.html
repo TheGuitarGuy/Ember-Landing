@@ -1,206 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy — Ember Fitness</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #1a1a1a;
+            background: #fafaf8;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1b2f4e;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #777;
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+        }
+
+        h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1b2f4e;
+            margin-top: 36px;
+            margin-bottom: 10px;
+            border-left: 3px solid #f07b38;
+            padding-left: 12px;
+        }
+
+        p {
+            margin-bottom: 14px;
+            color: #333;
+        }
+
+        ul {
+            margin: 8px 0 16px 24px;
+        }
+
+        li {
+            margin-bottom: 6px;
+            color: #333;
+        }
+
+        a {
+            color: #f07b38;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #fff3e8;
+            color: #f07b38;
+            border: 1px solid #f9d4b4;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background: #f5f3ef;
+            text-align: left;
+            padding: 10px 14px;
+            font-weight: 600;
+            color: #1b2f4e;
+            border-bottom: 2px solid #e8e4dc;
+        }
+
+        td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        .highlight {
+            background: #fff8f2;
+            border: 1px solid #f9d4b4;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 20px 0;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid #e8e4dc;
+            color: #999;
+            font-size: 0.85rem;
+        }
+    </style>
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="container nav-content">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="assets/Ember Black Text.png" alt="Ember Fitness">
-                </a>
-            </div>
-            <div class="nav-menu">
-                <a href="index.html" class="download-btn" style="text-decoration: none;">Back to Home</a>
-            </div>
-        </div>
-    </nav>
+    <div class="container">
 
-    <section class="container legal-page">
-        <span class="last-updated">Effective date: January 1, 2025 &nbsp;·&nbsp; Last updated: February 26, 2026</span>
         <h1>Privacy Policy</h1>
+        <p class="subtitle">Effective date: January 1, 2025 &nbsp;·&nbsp; Last updated: February 26, 2026</p>
 
-        <div class="legal-content">
-
-            <div class="highlight">
-                <strong>Summary:</strong> Ember Fitness stores your workout and account data in Google Firebase to provide
-                the app's features. We use Google AdMob to show ads to non-premium users (requires your ATT consent on iOS).
-                We never sell your personal data. You can export or delete all your data at any time from the app's Settings.
-            </div>
-
-            <h2>1. Who We Are</h2>
-            <p>Ember Fitness ("we", "us", "our") is the data controller for personal data collected through the Ember
-                Fitness mobile application (the "App"). If you have questions about this policy or wish to exercise your
-                rights, contact us at:</p>
-            <p><strong>Email:</strong> <a href="mailto:tryemberfitness@gmail.com">tryemberfitness@gmail.com</a></p>
-
-            <h2>2. What Data We Collect and Why</h2>
-            <p>We only collect data that is necessary to provide and improve the App's features.</p>
-
-            <table>
-                <tr>
-                    <th>Category</th>
-                    <th>Data</th>
-                    <th>Purpose</th>
-                    <th>Legal Basis (GDPR)</th>
-                </tr>
-                <tr>
-                    <td><strong>Account</strong></td>
-                    <td>Email address, display name, account creation date, last login date</td>
-                    <td>Create and manage your account; authenticate you</td>
-                    <td>Contract (Art. 6(1)(b))</td>
-                </tr>
-                <tr>
-                    <td><strong>Workout &amp; Fitness</strong></td>
-                    <td>Workout history, exercise reps/duration, streak count, scheduled workout days, slip-up history,
-                        fitness level, goals, voice coach preference</td>
-                    <td>Power the core workout tracking and streak features</td>
-                    <td>Contract (Art. 6(1)(b))</td>
-                </tr>
-                <tr>
-                    <td><strong>Groups &amp; Social</strong></td>
-                    <td>Group membership, display name, current streak, last active date (visible to group members)</td>
-                    <td>Enable group accountability features</td>
-                    <td>Consent (Art. 6(1)(a)) — disclosed at onboarding</td>
-                </tr>
-                <tr>
-                    <td><strong>Device &amp; Notifications</strong></td>
-                    <td>Firebase Cloud Messaging (FCM) token, platform identifier ("iOS")</td>
-                    <td>Send workout reminders you have requested</td>
-                    <td>Legitimate interest / Consent (Art. 6(1)(f) / (a))</td>
-                </tr>
-                <tr>
-                    <td><strong>Location</strong></td>
-                    <td>GPS coordinates during run workouts only (not stored remotely; used on-device for distance/pace)</td>
-                    <td>Calculate route, distance, and pace during a run</td>
-                    <td>Consent (Art. 6(1)(a)) — iOS permission prompt</td>
-                </tr>
-                <tr>
-                    <td><strong>Camera</strong></td>
-                    <td>Camera feed during pose-detection exercises (processed entirely on-device; no images stored or
-                        transmitted)</td>
-                    <td>Count repetitions and provide real-time form feedback</td>
-                    <td>Contract (Art. 6(1)(b))</td>
-                </tr>
-                <tr>
-                    <td><strong>Apple Health</strong></td>
-                    <td>Walk/run workouts imported from Apple Health on your explicit request</td>
-                    <td>Avoid double-entry of workouts recorded on Apple Watch</td>
-                    <td>Consent (Art. 6(1)(a)) — HealthKit permission prompt</td>
-                </tr>
-                <tr>
-                    <td><strong>Advertising</strong></td>
-                    <td>Ad identifiers (for non-premium users, subject to ATT consent)</td>
-                    <td>Display relevant ads through Google AdMob</td>
-                    <td>Consent (Art. 6(1)(a)) — iOS ATT prompt</td>
-                </tr>
-                <tr>
-                    <td><strong>Analytics</strong></td>
-                    <td>Anonymous app usage events (optional)</td>
-                    <td>Understand how features are used; improve the App</td>
-                    <td>Consent (Art. 6(1)(a)) — opt-in at onboarding, changeable in Settings</td>
-                </tr>
-            </table>
-
-            <h2>3. Data Processors and Third-Party Services</h2>
-            <p>We share data with the following processors who act on our behalf under data processing agreements:</p>
-
-            <p><strong>Google Firebase (Google LLC)</strong> <span class="badge">Data Processor</span><br>
-                We use Firebase Authentication, Cloud Firestore, and Cloud Messaging to store and sync your account data,
-                workouts, and push notification tokens. Google acts as a data processor under our Data Processing Addendum
-                (DPA). Data may be transferred to Google's servers in the United States under Standard Contractual Clauses
-                (SCCs) approved by the European Commission.<br>
-                Google Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></p>
-
-            <p><strong>Google AdMob (Google LLC)</strong> <span class="badge">Data Processor</span><br>
-                Non-premium users may see interstitial ads powered by Google AdMob. If you grant permission through the iOS
-                App Tracking Transparency (ATT) prompt, AdMob may use advertising identifiers to show personalized ads. If
-                you deny ATT permission, non-personalized ads are shown and no advertising identifier is shared.<br>
-                AdMob Privacy Policy: <a href="https://support.google.com/admob/answer/6128543" target="_blank">support.google.com/admob/answer/6128543</a></p>
-
-            <p><strong>Apple Inc.</strong> <span class="badge">Service Provider</span><br>
-                We use Sign in with Apple for authentication, Apple HealthKit for optional workout sync, and Apple's push
-                notification infrastructure. Apple processes data under its own privacy policy.<br>
-                Apple Privacy Policy: <a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a></p>
-
-            <p>We do not sell personal data to third parties. We do not use any additional analytics, advertising, or
-                tracking SDKs beyond those listed above.</p>
-
-            <h2>4. Data Retention</h2>
-            <p>We retain your personal data for as long as your account is active. When you delete your account:</p>
-            <ul>
-                <li>All Firestore documents (profile, workouts, stats, calibrations, slip-up history) are deleted immediately.</li>
-                <li>Your Firebase Authentication account is deleted immediately.</li>
-                <li>FCM push notification tokens are deleted as part of your user document.</li>
-                <li>Local offline cache on your device is cleared at the time of deletion.</li>
-                <li>Firebase may retain server-side logs for up to 180 days in accordance with Google's standard data retention policies.</li>
-            </ul>
-            <p>If your account is inactive (no sign-in) for 2 years, we reserve the right to delete it and all associated
-                data after providing 30 days' notice to your registered email address.</p>
-
-            <h2>5. Your Rights Under GDPR</h2>
-            <p>If you are located in the European Economic Area (EEA), United Kingdom, or Switzerland, you have the
-                following rights:</p>
-            <ul>
-                <li><strong>Right of access (Art. 15)</strong> — Request a copy of your personal data.</li>
-                <li><strong>Right to rectification (Art. 16)</strong> — Correct inaccurate data. Use Settings &gt; Edit Profile, or contact us.</li>
-                <li><strong>Right to erasure (Art. 17)</strong> — Delete your account and all data via Settings &gt; Account &gt; Delete Account, or contact us.</li>
-                <li><strong>Right to data portability (Art. 20)</strong> — Export your data as a JSON file via Settings &gt; Account &gt; Export My Data.</li>
-                <li><strong>Right to restrict processing (Art. 18)</strong> — Request that we limit processing of your data in certain circumstances.</li>
-                <li><strong>Right to object (Art. 21)</strong> — Object to processing based on legitimate interests (e.g., analytics). Toggle off Analytics in Settings &gt; About &amp; Legal.</li>
-                <li><strong>Right to withdraw consent (Art. 7(3))</strong> — Withdraw any consent you have given at any time without affecting prior processing. Use the toggles in Settings or contact us.</li>
-            </ul>
-            <p>To exercise any of these rights, contact us at <a href="mailto:tryemberfitness@gmail.com">tryemberfitness@gmail.com</a>. We will respond within 30 days.
-                You also have the right to lodge a complaint with your national data protection authority.</p>
-
-            <h2>6. International Data Transfers</h2>
-            <p>Your data is stored on Google Firebase servers, which may be located outside of the EEA (including the United
-                States). Google processes this data under Standard Contractual Clauses (SCCs) that provide an equivalent
-                level of protection to EEA data protection law. A copy of the applicable SCCs is available from Google at
-                <a href="https://cloud.google.com/terms/sccs" target="_blank">cloud.google.com/terms/sccs</a>.</p>
-
-            <h2>7. Children's Privacy</h2>
-            <p>The App is not directed at children under the age of 13 (or 16 in certain EU member states). We do not
-                knowingly collect personal data from children. If you believe a child has provided us with their data,
-                contact us and we will delete it promptly.</p>
-
-            <h2>8. Security</h2>
-            <p>All data in transit is encrypted using HTTPS/TLS. Data at rest in Google Cloud Firestore is encrypted by
-                Google. Camera-based pose detection is performed entirely on-device using Apple's Vision framework — no
-                images or video are ever transmitted.</p>
-
-            <h2>9. Changes to This Policy</h2>
-            <p>We may update this policy as the App evolves. Significant changes will be communicated via an in-app notice
-                or email to your registered address. Continued use of the App after the effective date constitutes
-                acceptance of the revised policy.</p>
-
-            <h2>10. Contact</h2>
-            <p>For privacy-related questions, data requests, or complaints:<br>
-                <strong>Email:</strong> <a href="mailto:tryemberfitness@gmail.com">tryemberfitness@gmail.com</a>
-            </p>
-
+        <div class="highlight">
+            <strong>Summary:</strong> Ember Fitness stores your workout and account data in Google Firebase to provide
+            the app's features. We use Google AdMob to show ads to non-premium users (requires your ATT consent on iOS).
+            We never sell your personal data. You can export or delete all your data at any time from the app's
+            Settings.
         </div>
-    </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2026 Ember Fitness. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="privacy.html">Privacy</a>
-                    <a href="terms.html">Terms</a>
-                    <a href="mailto:tryemberfitness@gmail.com">Contact</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="script.js"></script>
+        <h2>1. Who We Are</h2>
+        <p>Ember Fitness ("we", "us", "our") is the data controller for personal data collected through the Ember
+            Fitness mobile application (the "App"). If you have questions about this policy or wish to exercise your
+            rights, contact us at:</p>
+        <p><strong>Email:</strong> <a href="mailto:tryemberfitness@gmail.com">tryemberfitness@gmail.com</a></p>
+
+        <h2>2. What Data We Collect and Why</h2>
+        <p>We only collect data that is necessary to provide and improve the App's features.</p>
+
+        <table>
+            <tr>
+                <th>Category</th>
+                <th>Data</th>
+                <th>Purpose</th>
+                <th>Legal Basis (GDPR)</th>
+            </tr>
+            <tr>
+                <td><strong>Account</strong></td>
+                <td>Email address, display name, account creation date, last login date</td>
+                <td>Create and manage your account; authenticate you</td>
+                <td>Contract (Art. 6(1)(b))</td>
+            </tr>
+            <tr>
+                <td><strong>Workout & Fitness</strong></td>
+                <td>Workout history, exercise reps/duration, streak count, scheduled workout days, slip-up history,
+                    fitness level, goals, voice coach preference</td>
+                <td>Power the core workout tracking and streak features</td>
+                <td>Contract (Art. 6(1)(b))</td>
+            </tr>
+            <tr>
+                <td><strong>Device &amp; Notifications</strong></td>
+                <td>Firebase Cloud Messaging (FCM) token, platform identifier ("iOS")</td>
+                <td>Send workout reminders you have requested</td>
+                <td>Legitimate interest / Consent (Art. 6(1)(f) / (a))</td>
+            </tr>
+            <tr>
+                <td><strong>Location</strong></td>
+                <td>GPS coordinates during run workouts only (not stored remotely; used on-device for distance/pace)
+                </td>
+                <td>Calculate route, distance, and pace during a run</td>
+                <td>Consent (Art. 6(1)(a)) — iOS permission prompt</td>
+            </tr>
+            <tr>
+                <td><strong>Camera</strong></td>
+                <td>Camera feed during pose-detection exercises (processed entirely on-device; no images stored or
+                    transmitted)</td>
+                <td>Count repetitions and provide real-time form feedback</td>
+                <td>Contract (Art. 6(1)(b))</td>
+            </tr>
+            <tr>
+                <td><strong>Apple Health</strong></td>
+                <td>Walk/run workouts imported from Apple Health on your explicit request</td>
+                <td>Avoid double-entry of workouts recorded on Apple Watch</td>
+                <td>Consent (Art. 6(1)(a)) — HealthKit permission prompt</td>
+            </tr>
+            <tr>
+                <td><strong>Advertising</strong></td>
+                <td>Ad identifiers (for non-premium users, subject to ATT consent)</td>
+                <td>Display relevant ads through Google AdMob</td>
+                <td>Consent (Art. 6(1)(a)) — iOS ATT prompt</td>
+            </tr>
+        </table>
+
+        <h2>3. Data Processors and Third-Party Services</h2>
+        <p>We share data with the following processors who act on our behalf under data processing agreements:</p>
+
+        <p><strong>Google Firebase (Google LLC)</strong> <span class="badge">Data Processor</span><br>
+            We use Firebase Authentication, Cloud Firestore, and Cloud Messaging to store and sync your account data,
+            workouts, and push notification tokens. Google acts as a data processor under our Data Processing Addendum
+            (DPA). Data may be transferred to Google's servers in the United States under Standard Contractual Clauses
+            (SCCs) approved by the European Commission.<br>
+            Google Privacy Policy: <a href="https://policies.google.com/privacy"
+                target="_blank">policies.google.com/privacy</a></p>
+
+        <p><strong>Google AdMob (Google LLC)</strong> <span class="badge">Data Processor</span><br>
+            Non-premium users may see interstitial ads powered by Google AdMob. If you grant permission through the iOS
+            App Tracking Transparency (ATT) prompt, AdMob may use advertising identifiers to show personalized ads. If
+            you deny ATT permission, non-personalized ads are shown and no advertising identifier is shared.<br>
+            AdMob Privacy Policy: <a href="https://support.google.com/admob/answer/6128543"
+                target="_blank">support.google.com/admob/answer/6128543</a></p>
+
+        <p><strong>Apple Inc.</strong> <span class="badge">Service Provider</span><br>
+            We use Sign in with Apple for authentication, Apple HealthKit for optional workout sync, and Apple's push
+            notification infrastructure. Apple processes data under its own privacy policy.<br>
+            Apple Privacy Policy: <a href="https://www.apple.com/legal/privacy/"
+                target="_blank">apple.com/legal/privacy</a></p>
+
+        <p>We do not sell personal data to third parties. We do not use any additional analytics, advertising, or
+            tracking SDKs beyond those listed above.</p>
+
+        <h2>4. Data Retention</h2>
+        <p>We retain your personal data for as long as your account is active. When you delete your account:</p>
+        <ul>
+            <li>All Firestore documents (profile, workouts, stats, calibrations, slip-up history) are deleted
+                immediately.</li>
+            <li>Your Firebase Authentication account is deleted immediately.</li>
+            <li>FCM push notification tokens are deleted as part of your user document.</li>
+            <li>Local offline cache on your device is cleared at the time of deletion.</li>
+            <li>Firebase may retain server-side logs for up to 180 days in accordance with Google's standard data
+                retention policies.</li>
+        </ul>
+        <p>If your account is inactive (no sign-in) for 2 years, we reserve the right to delete it and all associated
+            data after providing 30 days' notice to your registered email address.</p>
+
+        <h2>5. Your Rights Under GDPR</h2>
+        <p>If you are located in the European Economic Area (EEA), United Kingdom, or Switzerland, you have the
+            following rights:</p>
+        <ul>
+            <li><strong>Right of access (Art. 15)</strong> — Request a copy of your personal data.</li>
+            <li><strong>Right to rectification (Art. 16)</strong> — Correct inaccurate data. Use Settings &gt; Edit
+                Profile, or contact us.</li>
+            <li><strong>Right to erasure (Art. 17)</strong> — Delete your account and all data via Settings &gt; Account
+                &gt; Delete Account, or contact us.</li>
+            <li><strong>Right to data portability (Art. 20)</strong> — Export your data as a JSON file via Settings &gt;
+                Account &gt; Export My Data.</li>
+            <li><strong>Right to restrict processing (Art. 18)</strong> — Request that we limit processing of your data
+                in certain circumstances.</li>
+            <li><strong>Right to object (Art. 21)</strong> — Object to processing based on legitimate interests. Contact
+                us at the email below.</li>
+            <li><strong>Right to withdraw consent (Art. 7(3))</strong> — Withdraw any consent you have given at any time
+                without affecting prior processing. Use the toggles in Settings or contact us.</li>
+        </ul>
+        <p>To exercise any of these rights, contact us at <a
+                href="mailto:support@emberfitness.app">tryemberfitness@gmail.com</a>. We will respond within 30 days.
+            You
+            also have the right to lodge a complaint with your national data protection authority.</p>
+
+        <h2>6. International Data Transfers</h2>
+        <p>Your data is stored on Google Firebase servers, which may be located outside of the EEA (including the United
+            States). Google processes this data under Standard Contractual Clauses (SCCs) that provide an equivalent
+            level of protection to EEA data protection law. A copy of the applicable SCCs is available from Google at <a
+                href="https://cloud.google.com/terms/sccs" target="_blank">cloud.google.com/terms/sccs</a>.</p>
+
+        <h2>7. Children's Privacy</h2>
+        <p>The App is not directed at children under the age of 13 (or 16 in certain EU member states). We do not
+            knowingly collect personal data from children. If you believe a child has provided us with their data,
+            contact us and we will delete it promptly.</p>
+
+        <h2>8. Security</h2>
+        <p>All data in transit is encrypted using HTTPS/TLS. Data at rest in Google Cloud Firestore is encrypted by
+            Google. Camera-based pose detection is performed entirely on-device using Apple's Vision framework — no
+            images or video are ever transmitted.</p>
+
+        <h2>9. Changes to This Policy</h2>
+        <p>We may update this policy as the App evolves. Significant changes will be communicated via an in-app notice
+            or email to your registered address. Continued use of the App after the effective date constitutes
+            acceptance of the revised policy.</p>
+
+        <h2>10. Contact</h2>
+        <p>For privacy-related questions, data requests, or complaints:<br>
+            <strong>Alternative:</strong> <a href="mailto:tryemberfitness@gmail.com">tryemberfitness@gmail.com</a>
+        </p>
+
+        <footer>
+            <p>&copy; 2026 Ember Fitness. All rights reserved.<br>
+                This policy applies to the Ember Fitness iOS application.</p>
+        </footer>
+
+    </div>
 </body>
+
 </html>
